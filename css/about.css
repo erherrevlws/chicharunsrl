@@ -1,0 +1,363 @@
+:root {
+    --color-primary: hwb(332 14% 25%);
+    --color-light: #f8f8f8;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    
+   
+}
+h1{
+    text-align: center;
+    
+}
+
+
+/* contenedor principal, Limita el ancho y centra el contenido */
+.containerAbout {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+
+/*Distribuye contenido en columnas flexibles */
+.section-about > div {
+    display: flex; /* Activa diseño flexbox */
+    gap: 60px;    /* Espacio entre columnas */
+    flex-wrap: wrap;
+    align-items: flex-start; /*esto hace que se alinee ariba y no centrado vertcalmente */
+}
+
+.container-images {
+    flex: 1;  /* Ocupa espacio proporcional */
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+}
+
+.main-image{
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 999px;
+}
+
+.alt-image {
+    position: absolute; /* Se coloca sobre la principal */
+    top: 0;
+    left: -20%;     /* Se sale un poco del borde izquierdo */
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 999px;
+    border: 7px solid var(--color-light);
+}
+
+.container-images h3{
+    margin-top: 200px;
+    text-align: left;
+}
+
+.equipo-de-trabajo {
+    display: grid;  /*usamos grid para organizar las imagenes*/
+    grid-template-columns: repeat(2, 1fr);  /*dos columnas del mismo ancho*/
+    gap: 40px;     /*espacio entre imagenes*/
+    justify-items: center;
+   
+
+}
+
+.img-equipo img{
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;  /*evita que se deforme la imagen*/
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;  /*centra la imagen horizontalmente dentro del contenedor*/
+    transition: transform 0.3s ease;  /*añade trnsicion suave al transoformar con hover*/
+    box-shadow: 0 8px 20px rgba(226, 62, 62, 0.15); /* Sombra */
+
+
+
+}
+
+.img-equipo img:hover{
+    transform: scale(1.1); /*aumenta el tamaño de la imagen*/
+    cursor: pointer;
+}
+
+
+.acerca-de-nosotros{
+    font-size: 25px;
+    text-align: center;
+}
+
+.title{
+    text-align: center;
+}
+
+.content {
+    flex: 1;
+    min-width: 300px; /* No se hace demasiado pequeño en pantallas pequeñas */
+
+}
+
+
+.title {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.title span {
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+.acerca-de-nosotros {
+    display: block;
+    text-transform: uppercase;   /* Todo en mayúsculas */
+    color: var(--color-primary);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+p {
+    line-height: 1.6;   /* Altura de línea para legibilidad */
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.mision span {
+    display: list-item;   /* Permite márgenes sin afectar el flujo */
+    margin-bottom: 10px;  /*sirve para dar un margen o espcio en la parte de abajo del elemetno*/
+}
+
+.valores {
+  margin-bottom: 10px; /* Separación entre items */
+  list-style-position: outside; /* Asegura que la viñeta de la lista quede afuera */
+}
+
+.valores strong,
+.valores span {
+  display: inline; /* Esto evita romper el flujo de la línea */
+}
+
+
+/*contenedor de los botones*/
+.container-buttons {
+    margin-top: 30px;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-block;  /*permite que se comporten como elementos en linea*/
+    text-decoration: none;   /*elimina cualquier estilo de texto decorativo*/
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition:  0.3s;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+    margin-right: 15px;
+}
+
+.btn-secondary {
+    background-color: var(--color-light);
+    color: var(--color-primary);    
+    border:  2px solid var(--color-primary);  /*borde del boton*/
+}
+.btn-primary:hover,
+.btn-secondary:hover {
+    transform: scale(1.1);
+}
+
+
+/*media querie de la page*/
+
+
+/* Breakpoint para pantallas medianas (tablets) - 768px a 992px */
+@media (max-width: 992px) {
+    .contenido{
+        padding-top: 200px;
+    }
+    .section-about > div {
+        /* Permite que el texto y las imágenes se queden en flex,
+           pero ajusta el gap y si hay flex-wrap, se apilarán si no hay espacio */
+        gap: 40px;
+    }
+
+    .container-images {
+        max-width: 100%; /* Permite que las imágenes ocupen más espacio si están solas */
+        align-items: center; /* Centra las imágenes si están apiladas */
+    }
+
+    .main-image {
+        max-width: 300px; /* Un poco más pequeña en tablets */
+    }
+
+    .alt-image {
+        left: 0; /* Centra o ajusta la posición de la imagen alternativa si se superpone */
+        position: static; /* Considera si quieres que siga superpuesta o en línea */
+        margin-top: 20px; /* Espacio si es static */
+        border: none; /* Elimina el borde si es static */
+    }
+
+    .container-images h3 {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    /* Equipo de trabajo: Dejar que se ajusten a 2 columnas si caben, sino a 1 */
+    .equipo-de-trabajo {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Más flexible, permite 1 o 2 columnas */
+        gap: 30px; /* Ajusta el espacio */
+    }
+
+    .img-equipo img {
+        max-width: 200px; /* Las imágenes del equipo un poco más pequeñas */
+        width: 100%;
+        height: 200px; /* Mantiene la proporción si la altura es fija */
+    }
+
+    /* Texto: Alineación a la izquierda o centro para mejor lectura en estrecho */
+    p {
+        text-align: left; /* No justificado en pantallas más pequeñas para evitar "ríos" */
+        padding: 0 10px; /* Un poco de padding horizontal para el texto */
+    }
+
+    .title,
+    .acerca-de-nosotros {
+        text-align: center;
+        font-size: 22px; /* Un poco más pequeño */
+    }
+
+    .container-buttons {
+        text-align: center; /* Centra los botones */
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        /* Los botones pueden seguir siendo inline-block en tablets si caben en una línea */
+        margin: 10px;
+        width: auto; /* Permite que se ajusten a su contenido */
+    }
+}
+
+/* Breakpoint para pantallas pequeñas (móviles) - hasta 576px */
+@media (max-width: 576px) {
+    .contenido{
+        padding-top: 200px;
+    }
+    .containerAbout {
+        padding: 20px 15px;
+        /* Asegúrate de que el contenedor principal siempre use el ancho completo si lo deseas */
+        width: 100%; /* Aunque ya lo hace por defecto con display: block, reafirmarlo no está de más */
+        box-sizing: border-box; /* Asegura que padding no sume al ancho total */
+    }
+
+    .content {
+        width: 100%;
+        min-width: 300px; /* No se hace demasiado pequeño en pantallas pequeñas */
+
+    }
+
+    .section-about > div {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .container-images {
+        max-width: 100%; /* Esto es correcto */
+        align-items: center; /* Esto centrará las imágenes dentro de este contenedor */
+        text-align: center; /* Esto centrará el texto (ej. h3) dentro de este contenedor */
+        width: 100%; /* Asegura que ocupe todo el ancho disponible */
+        box-sizing: border-box; /* Importante para el padding si lo añades aquí */
+    }
+
+    .main-image {
+        /* Para que la imagen principal ocupe un buen espacio pero no se vea pixelada si es muy pequeña */
+        width: 90%; /* Ocupa el 90% del contenedor images */
+        max-width: 300px; /* Limita su tamaño máximo si la pantalla es muy grande (aunque aquí es max-width: 576px) */
+        height: auto; /* Mantén la proporción */
+        border-radius: 50%;
+    }
+
+    .alt-image {
+        position: static;
+        margin-top: 15px;
+        width: 60%; /* Ocupa un % más pequeño que la principal */
+        max-width: 180px; /* Limita su tamaño máximo */
+        height: auto; /* Mantén la proporción */
+        border: none;
+    }
+
+    .container-images h3 {
+        margin-top: 15px;
+        font-size: 20px;
+        /* text-align: center; // Ya se hereda de .container-images */
+        width: 100%; /* Asegura que el h3 ocupe todo el ancho para centrarse correctamente */
+    }
+
+    .equipo-de-trabajo {
+        grid-template-columns: 1fr; /* Siempre una columna */
+        gap: 20px;
+        width: 100%; /* Asegura que el grid ocupe todo el ancho disponible */
+    }
+
+    .img-equipo img {
+        /* Para que la imagen del equipo ocupe la mayor parte del espacio sin excederse */
+        width: 90%; /* Ocupa el 90% del espacio de su columna (1fr) */
+        max-width: 250px; /* Limita su tamaño máximo */
+        height: auto; /* Mantén la proporción (mejor que altura fija si el ancho cambia mucho) */
+        /* margin: 0 auto; // Ya lo tienes fuera del media query, sigue funcionando para centrar */
+        object-fit: cover; /* Asegura que se vea bien */
+    }
+
+    /* Texto: Alineación más adecuada para móviles */
+    p {
+        text-align: justify; 
+        font-size: 0.95em;
+        /* Padding: 0; // Si .containerAbout ya tiene padding lateral, esto está bien.
+                      // Si no, puedes añadir un padding lateral aquí: padding: 0 10px; */
+    }
+
+    .title,
+    .acerca-de-nosotros {
+        font-size: 18px;
+        text-align: center; /* Para títulos, centrado suele verse bien */
+        width: 100%; /* Asegura que el título ocupe todo el ancho para que se centre */
+    }
+
+    .container-buttons {
+        text-align: center;
+        width: 100%; /* Asegura que el contenedor de botones ocupe todo el ancho */
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        display: block;
+        margin: 10px auto;
+        width: 90%; /* Aumenta al 90% para que ocupen más espacio lateral */
+        max-width: 300px; /* Opcional: Limita el ancho máximo de los botones en pantallas grandes */
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .btn-secondary {
+        margin-top: 20px;
+    }
+}

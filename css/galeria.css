@@ -1,0 +1,88 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.img-gallery{
+    width: 90%;
+    margin: 50px auto 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+    gap: 30px;
+}
+
+.img-gallery img{
+    width: 100%;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.img-gallery img:hover{
+    transform: scale(1.2);
+}
+
+.ful-img{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    z-index: 99;
+}
+
+.ful-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.ful-img span{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+} 
+
+@media (max-width: 768px) {
+    .ful-img {
+        /* Para que la imagen y el span se apilen, hacemos el contenedor flex column */
+        display: flex; /* Aseguramos que sea flex en móvil, si tu JS lo cambia a block */
+        flex-direction: column;
+        justify-content: center; /* Centra verticalmente la imagen y el span */
+        align-items: center; /* Centra horizontalmente la imagen y el span */
+        padding: 20px; /* Añade un padding para que no se pegue a los bordes de la pantalla */
+        display: none;
+        
+        
+        
+    }
+
+    .ful-img img {
+        width: 90%; /* Ajusta el ancho de la imagen para que no ocupe todo el espacio */
+        height: auto; /* Permite que la altura se ajuste proporcionalmente */
+        max-height: 80vh; /* Limita la altura máxima para dejar espacio al span */
+        margin-bottom: 20px; /* Espacio entre la imagen y la "x" */
+        
+    }
+
+    .ful-img span {
+        position: static; /* ¡CAMBIO CLAVE! Saca el span del posicionamiento absoluto */
+        top: auto; /* Anula la propiedad top */
+        right: auto; /* Anula la propiedad right */
+        font-size: 24px; /* Opcional: Reduce el tamaño de la "x" para móvil */
+        margin-top: 0; /* Anula cualquier margen superior que pudiera haber tenido */
+        /* Asegúrate de que el color sea visible */
+        color: #fff;
+        
+    }
+    .img-gallery{
+        padding-top: 100px;
+    }
+    
+}

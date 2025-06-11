@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicharun | Galeria</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/inicioform.css">
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="nav_contain">
+            <div class="menu_contain">
+                <img src="../img/logochicha.png" alt="">
+                <h1>acceder</h1>
+            </div>
+            <nav class="nav">
+            
+
+                <ul class="list">
+                    <li class="list__item">
+                        <div class="list__button">
+                            <img src="" alt="" class="list__img">
+                            <a href="../index.html" class="nav__link">inicio</a>
+                        </div>
+                    </li>
+
+
+                    <li class="list__item">
+                        <div class="list__button">
+                            <img src="" alt="" class="list__img">
+                            <a href="catalogo.html" class="nav__link">Catalogo</a>
+                        </div>
+                    </li>
+                    
+                    <li class="list__item">
+                        <div class="list__button">
+                            <img src="" alt="" class="list__img">
+                            <a href="galeria.html" class="nav__link">Galeria</a>
+                        </div>
+                    </li>
+                    <li class="list__item">
+                        <div class="list__button">
+                            <img src="" alt="" class="list__img">
+                            <a href="aboutUs.html" class="nav__link">About Us</a>
+                        </div>
+                    </li>
+
+                    <li class="list__item">
+                        <div class="list__button">
+                            <img src="" alt="" class="list__img">
+                            <a href="acceder.html" class="nav__link">acceder</a>
+                        </div>
+                    </li>
+
+                </ul>
+
+
+            </nav>
+        </div>
+       
+
+        <div class="contenido" >
+
+            <div class="page-container">
+
+                    <div class="form-card login-form-card">
+                        <div class="welcome-section">
+                            <img src="img/logo/logo.png" alt="Logo ChichaRun" class="welcome-logo"> <h3>¡Hola de nuevo!</h3>
+                            <p>Inicia sesión para acceder a tu cuenta y explorar nuestros deliciosos chicharrones.</p>
+                            <a href="" class="auth-button secondary-alt">¿No tienes cuenta? Regístrate</a> 
+                        </div>
+
+                        <div class="form-section">
+                            <form class="auth-form-standalone" action="/login" method="POST">
+                                <h2>Iniciar sesión</h2>
+                                <span class="subtitle">Use su correo y contraseña</span>
+
+                                <div class="input-group-standalone">
+                                    <ion-icon name="mail-outline"></ion-icon>
+                                    <input type="email" placeholder="Email" name="email" required>
+                                </div>
+                                <div class="input-group-standalone">
+                                    <ion-icon name="lock-closed-outline"></ion-icon>
+                                    <input type="password" placeholder="Contraseña" name="password" required>
+                                </div>
+                                <a href="#" class="forgot-password-standalone">¿Olvidaste tu contraseña?</a>
+                                <button type="submit" class="auth-button primary-alt">INICIAR SESIÓN</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <br><br> 
+
+                    <div class="form-card register-form-card">
+                        <div class="welcome-section">
+                            <img src="img/logo/logo.png" alt="Logo ChichaRun" class="welcome-logo">
+                            <h3>¡Bienvenido a ChichaRun!</h3>
+                            <p>Cree su cuenta para disfrutar de todos los beneficios y acceder a nuestros productos exclusivos.</p>
+                            <a href="" class="auth-button secondary-alt">¿Ya tienes cuenta? Inicia sesión</a>
+                        </div>
+
+                        <div class="form-section">
+                            <form class="auth-form-standalone" action="/register" method="POST">
+                                <h2>Registrarse</h2>
+                                <span class="subtitle">Cree su cuenta con su correo electrónico</span>
+
+                                <div class="input-group-standalone">
+                                    <ion-icon name="person-outline"></ion-icon>
+                                    <input type="text" placeholder="Nombre completo" name="fullname" required>
+                                </div>
+                                <div class="input-group-standalone">
+                                    <ion-icon name="mail-outline"></ion-icon>
+                                    <input type="email" placeholder="Email" name="email" required>
+                                </div>
+                                <div class="input-group-standalone">
+                                    <ion-icon name="lock-closed-outline"></ion-icon>
+                                    <input type="password" placeholder="Contraseña" name="password" required>
+                                </div>
+                                <div class="input-group-standalone">
+                                    <ion-icon name="lock-closed-outline"></ion-icon>
+                                    <input type="password" placeholder="Confirmar contraseña" name="confirm_password" required>
+                                </div>
+                                <button type="submit" class="auth-button primary-alt">REGISTRARSE</button>
+                            </form>
+            </div>
+
+        </div>
+    </div>
+    <script src="../main.js"></script>
+</body>
+
+</html>

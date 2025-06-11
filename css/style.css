@@ -1,0 +1,102 @@
+:root {
+    --color-primary: hwb(332 14% 25%);
+    --color-light: #f8f8f8;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* contenedor principal, Limita el ancho y centra el contenido */
+
+
+
+/*Distribuye contenido en columnas flexibles */
+/* .section-about > div {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+} */
+
+
+.content, .container-images {
+ width: 50%;
+
+}
+
+.contenido--img img{
+    width: 350px;
+    border-radius: 30px;
+}
+
+
+.contenido section{
+    display: flex;
+    text-align: justify;
+    padding-right: 10px;
+}
+
+
+
+
+.title {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.title span {
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+.acerca-de-nosotros {
+    display: block;
+    text-transform: uppercase;   /* Todo en mayúsculas */
+    color: var(--color-primary);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+p {
+    line-height: 1.6;   /* Altura de línea para legibilidad */
+    margin-bottom: 20px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.mision span {
+    display: inline-block;   /* Permite márgenes sin afectar el flujo */
+    margin-bottom: 10px;
+}
+
+
+/*contenedor de los botones*/
+.container-buttons {
+    margin-top: 30px;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-block;  /*permite que se comporten como elementos en linea*/
+    text-decoration: none;   /*elimina cualquier estilo de texto decorativo*/
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+    margin-right: 15px;
+}
+
+.btn-secondary {
+    background-color: var(--color-light);
+    color: var(--color-primary);    
+    border:  2px solid var(--color-primary);  /*borde del boton*/
+}
